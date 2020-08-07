@@ -1,0 +1,997 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --logo-color: #0f75bc;
+}
+
+.hidden { display: none;}
+
+.active {
+  background-color: white;
+  border-left: 5px solid var(--logo-color);
+}
+
+body {
+	margin: 0;
+	font-family: OpenSans, Arial, sans-serif;
+}
+/*Styling header area*/
+
+header {
+	border-bottom: 2px solid #d9d9d9;
+	height: 70px;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	background-color: white;
+  z-index: 100;
+}
+
+.header-area {
+  display: block;
+  overflow: hidden;
+	padding: 15px 30px;
+}
+/*styling logo*/
+.logo {
+	float: left;
+	vertical-align: middle;
+  margin-right: 15px;
+}
+
+.logo img {
+	height: 36px;
+}
+
+/*styling dropmenu*/
+.dropmenu {
+	margin-left: 20px;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+/* Decorating dropdown Button */
+.drpbtn, .loginbutton, .signupbutton {
+  	background-color: var(--logo-color);
+ 	  padding: 12px;
+ 	  font-size: 14px;
+  	font-weight: bold;
+ 	  border: none;
+  	border-radius: 4px;
+    text-align: center;
+    color: white;
+}
+
+/*styling dropbtn link*/
+.drpbtn a{
+    text-decoration: none;
+    color: white;
+}
+
+/*sytling dropmenu content area*/
+
+.dropmenu-content {
+  display: none;
+  position: relative;
+  background-color: white;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/*styling dropmenu content*/
+.dropmenu-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/*hover effects on the whole dropmenu*/
+.dropmenu:hover .drpbtn{
+  cursor: pointer;
+  background-color: white;
+}
+
+.dropmenu:hover .drpbtn a{color: var(--logo-color);}
+
+.dropmenu:hover .dropmenu-content {
+	display: block;
+  position: absolute;
+  float: left;
+}
+
+.dropmenu-content a:hover {background-color: #ddd;}
+
+
+
+
+/*Styling searchbar*/
+.search {
+  display: flex;
+  width: 100%;
+}
+
+/*styling searchterm*/
+.searchTerm {
+  width: 100%;
+  height: 40px;
+  border: 3px solid grey;
+  border-right: none;
+  padding: 7px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{color: grey;}
+
+/*styling searchbar button*/
+.searchButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid grey;
+  background: grey;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.searchButton i{vertical-align: middle;}
+
+/*hover effect on searchbar*/
+.searchButton:hover {background: var(--logo-color);}
+
+/*wraping the whole searchbar area*/
+.wrap{
+  margin-left: 20px;
+  width: 400px;
+  position: absolute;
+  display: inline-block;
+}
+
+/*styling right side of the hedear*/
+.header-right {float: right;}
+
+.loginbutton {
+  margin-right: 10px;
+}
+
+/*hover effect on login and signup button*/
+.loginbutton:hover, .signupbutton:hover{
+  background-color: white;
+  color: var(--logo-color);
+  cursor: pointer;
+}
+
+/*creating form area for login and signup*/
+.modal .container {
+  padding: 16px;
+}
+
+/*styling Modal area(form area)*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 400px; /* Could be more or less, depending on screen size */
+}
+
+/*styling input boxes in the modal*/
+.modal-content input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+.modal-content input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/*styling buttons in the modal*/
+.modal-content button {
+  background-color: var(--logo-color);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.7;
+}
+
+.modal-content button:hover {opacity: 1;}
+
+.modal-content hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.modal-content span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/*styling cancel button*/
+.modal-content .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.clearfix .cancelbtn {width: 100%;}
+
+/*animating form popup*/
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+
+.profile-dropdownbtn {
+  position: relative;
+  float: right;
+  width: auto;
+  height: 40px;
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+
+.profile-dropdownbtn img {
+  width: 38px;
+  border-radius: 19px;
+  float: left;
+}
+
+.profile-dropdownbtn p {
+  margin-left: 2px;
+  float: right;
+}
+
+.profile-drodown {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.dropdown-content {
+  margin-top: 40px;
+  position: fixed;
+  display: block;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+    display: block;
+
+}
+
+.logoutbtn {
+  text-align: left;
+  border:none;
+  width: 100%;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.dropdown-content a:hover, .logoutbtn:hover{
+  background-color: #ddd;
+}
+
+.show {display: block;}
+
+@media screen {
+
+}
+
+
+/*header area styling ends*/
+
+.site-intro {
+  background-image: linear-gradient(to right,black 0%,grey 60%), url("../img/banner1.jpg");
+  background-color: #cccccc;
+  height: calc(100vh - 70px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+
+}
+
+.intro-texts-area {
+  width: 1136px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.intro-texts-container {
+  position: relative;
+  width: 600px;
+  text-align: left;
+  color: white;
+  padding-left: 10px;
+  padding-top: 200px;
+}
+
+.intro-texts-container h1, p, button{
+  padding-bottom: 10px;
+}
+
+.login-intro {
+  padding: 50px;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+
+/*contact form styling*/
+contact-form {
+  margin: 20px 0;
+  position: static;
+  overflow: hidden;
+  display: block;
+}
+
+.contact-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 60%;
+  overflow: hidden;
+}
+
+.contact-form-content-container {
+  padding: 10px;
+  text-align: center;
+  color: #262626;
+}
+
+.contact-form-content-container h4{
+  font-size: 1.7rem;
+}
+
+.contact-form-form-container {
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.contact-form-form-container input[type=text], input[type=password], textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.contact-form-form-container button {
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  color: #262626;
+  padding: 14px 20px;
+  cursor: pointer;
+  width: auto;
+  font-weight: bold;
+}
+
+.browse-section {
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  position: static;
+}
+
+.slider {
+    width: 1136px;
+    margin: 0 auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: blue;
+  background: black;
+}
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+}
+
+.course-gallery {
+  display: flex;
+}
+
+.course-gallery a {
+  text-decoration: none;
+  color: black;
+}
+
+.course-gallery-content-container {
+  height: 384px !important;
+  width: 264px !important;
+  margin: 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: rgba(31, 31, 31, 0.12) 0px 1px 6px, rgba(31, 31, 31, 0.12) 0px 1px 4px;
+  border-radius: 4px;
+}
+
+.cover-image {
+  height: 150px;
+  width: inherit;
+  box-sizing: border-box;
+}
+
+.offered-by {
+  margin: -40px 0 0 10px;
+  width: 60px;
+  border: 1px solid #BFBFBF;
+  background-color: white;
+}
+
+.offered-by img {
+  width: 60px;
+  height: 60px;
+}
+
+.course-intro-text {
+  width: 100%;
+  padding: 10px;
+  word-wrap: normal;
+  box-sizing: border-box;
+}
+
+.course-header-area {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  width: 1300px;
+  padding: 15px;
+}
+
+.general-course-info {
+  width: 700px;
+
+}
+
+#enrollbtn {
+  width: 100px;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--logo-color);
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+
+#enrollbtn:hover {
+  cursor: pointer;
+}
+
+#enrollbtn span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.enroll-options-form {
+  background-color: #fefefe;
+  margin: 10% auto auto;
+  border: 1px solid #888;
+  width: 350px;
+  position: relative;
+}
+
+.enroll-options-header button {
+  position: absolute;
+  right: 10px;
+  color: red;
+  font-size: 20px;
+  border: none;
+  background-color: inherit;
+}
+
+.enroll-options-header button:hover {
+  cursor: pointer;
+}
+
+.enroll-options-header {
+  height: 40px;
+  background: #e6e6e6;
+  display: flex;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.enroll-options-header p {
+  margin: auto auto;
+  font-size: 20px;
+  text-align: center;
+}
+
+.enroll-options {
+  padding: 20px;
+  text-align: center;
+}
+
+.choices {
+  padding: 10px 0;
+  text-align: left;
+}
+
+.choices label {
+  box-sizing: border-box;
+}
+
+.submit-enroll-choice {
+  border: none;
+  background-color: var(--logo-color);
+  color: white;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.submit-enroll-choice:hover {
+  cursor: pointer;
+}
+
+.course-redirect-btn {
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  background-color: var(--logo-color);
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+
+.course-redirect-btn:hover {
+  cursor: pointer;
+}
+
+.course-navbar {
+  background-color: white;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.course-navbar nav {
+    margin: 0 30px;
+}
+
+.course-navbar ul{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.course-navbar ul li{
+  list-style: none;
+}
+
+.course-navbar ul li a {
+  text-decoration: none;
+  display: block;
+  color: black;
+  padding: 0 10px;
+}
+
+.banner-logo-name {
+  display: flex;
+}
+
+.banner-logo-name img{
+  width: 70px;
+  height: 70px;
+  border: 1px solid #e6e6e6;
+  margin: auto 0;
+}
+
+.banner-logo-name h4{
+  margin: auto 10px;
+  width: 400px;
+}
+
+.sticky-nav-banner .enroll-button {
+  margin: auto 0;
+  margin-left: 600px;
+  position: relative;
+}
+
+.sticky-nav-banner {
+  top: 0;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  display: flex;
+  z-index: 150;
+  background-color: white;
+  visibility: hidden;
+  padding: 0 70px;
+  box-sizing: border-box;
+}
+
+.sticky {
+  display: block;
+  position: fixed;
+  top: 100px;
+  width: 100%;
+}
+
+.course-about-section {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 15px;
+}
+
+.about-text {
+  margin: 0 200px 0 60px;
+  width: 600px;
+}
+
+.about-text p{
+  font-size: 15px;
+  text-align: justify;
+}
+
+
+.instructor-info p{
+  margin: 5px 0;
+  font-size: 14px;
+  padding: 0;
+}
+
+.instructor-info a{
+  text-decoration: none;
+  color: black;
+}
+
+.instructor-info-container {
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.instructor-profile-picture {
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  overflow: hidden;
+  margin: auto 0;
+}
+
+.instructor-profile-picture img {
+  width: 80px;
+}
+
+.instructor-text-info h5{
+  font-size: 16px;
+  margin: 3px 10px;
+}
+.instructor-text-info p{
+  margin: 2px 10px;
+  padding: 0;
+  font-size: 12px;
+}
+
+.institution-info {
+  width: 400px;
+}
+
+.institution-name-logo {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.institution-name-logo img{
+  width: 60px;
+  height: 60px;
+  border: 1px solid #e6e6e6;
+  margin-right: 15px;
+}
+
+.institution-name-logo h4{
+  margin: auto 0;
+}
+
+.about-institution p{
+  font-size: 15px;
+  text-align: justify;
+}
+
+.syllabus-section {
+  background-color: #e6e6e6;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.syllabus-section h5 {
+  text-align: center;
+  font-size: 20px;
+}
+
+.week-wise-syllabus {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.week, .content-for-week {
+  padding: 10px 0;
+}
+
+.week {
+  text-align: center;
+  width: 150px;
+  letter-spacing: 3px;
+  margin: auto 0;
+}
+
+.content-for-week {
+  width: 850px;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.content-for-week p {
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.content-for-week ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.content-for-week ul li {
+  padding: 3px 10px;
+}
+
+.content-for-week ul li:active {
+  background-color: white;
+}
+
+.sidenav-container {
+  display: flex;
+}
+
+.sidenav {
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  height: calc(100vh - 70px);
+  width: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #f2f2f2;
+  border-right: 2px solid #e6e6e6;
+}
+
+.sidenav a {
+  text-decoration: none;
+}
+
+.university-logo {
+  padding: 20px;
+  text-align: center;
+}
+
+.sidenav .university-logo img {
+  width: 150px;
+  border: 1px solid #e6e6e6;
+}
+
+.weeks-contents-extras ul {
+  list-style: none;
+  padding: 0;
+}
+
+.weeks-contents-extras ul li {
+  font-size: 20px;
+  color: #262626;
+  padding: 10px 30px;
+}
+
+.contents {
+  margin-left: 40px;
+}
+
+.contents p {
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #262626;
+  margin: 0;
+}
+
+.contents ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contents ul li {
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #262626;
+  line-height: 1.5;
+}
+
+.contents ul li:hover {
+  background-color: #e1e1e1;
+}
+
+.sidebar-toggler-container {
+  width: 40px;
+  height: calc(100vh - 70px);
+  border-right: 1px solid #e6e6e6;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.sidebar-toggler {border-bottom: 2px solid #e6e6e6;}
+
+#toggler-btn {
+  font-size: 20px;
+  color: #262626;
+  width: 40px;
+  background: none;
+  border: none;
+}
+
+#toggler-btn:hover {
+  cursor: pointer;
+}
+
+#toggler-btn i {vertical-align: middle;}
+
+.content-wall {
+  padding: 30px;
+  display: flex;
+}
+/*foooter syling starts*/
+footer {
+  bottom: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.footer hr {margin-bottom: 35px;}
+
+.footer-area {
+  max-width: 1136px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+
+.footer-area hr{margin: 35px 0px 0px 0px;}
+
+.footer-column-container {
+  display: flex;
+}
+
+.footer-column-container h5{
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #262626;
+}
+
+.footer-column {
+  width: 200px;
+  display: inline-block;
+}
+
+.column1 {margin-right: 25%;}
+.column3 {margin-left: 25%;}
+
+.dropdown-links-content {
+  display: inline-block;
+  width: 150px;
+  padding
+}
+
+.dropdown-links-content ul{
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  list-style: none;
+  padding: 4px 4px 4px 0px;
+}
+
+.list-item a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+
+.copy-social {
+  padding: 0px 20px 20px 20px;
+  overflow: hidden;
+  display: inline;
+}
+
+.copy {
+  padding: 0;
+  float: left;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.social {
+  float: right;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.icon {
+  max-height: 28px;
+  max-width: 28px;
+  margin-left: 3px;
+}
+
+
+/*footer styling ends*/
